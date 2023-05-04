@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\StoryController as S;
+use App\Http\Controllers\FrontController as F;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,13 @@ use App\Http\Controllers\StoryController as S;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::name('front-')->group(function () {
+    Route::get('/', [F::class, 'index'])->name('index');
+    // Route::get('/category/{cat}', [F::class, 'catColors'])->name('cat-colors');
+    // Route::get('/product/{product}', [F::class, 'showProduct'])->name('show-product');
+    // Route::get('/my-orders', [F::class, 'orders'])->name('orders')->middleware('role:admin|client');
+    // Route::get('/download/{order}', [F::class, 'download'])->name('download')->middleware('role:admin|client');
 });
-
 
 Route::prefix('stories')->name('stories-')->group(function () {
 

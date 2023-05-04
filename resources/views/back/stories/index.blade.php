@@ -16,7 +16,7 @@
                                 <div class="product">
                                     <div class="title-price">
                                         <div>
-                                            <h2>{{$story->title}}<span>{{$story->price}} EUR</span></h2>
+                                            <h2>{{$story->title}}<span>{{$story->totalfund}} EUR</span></h2>
 
                                         </div>
                                         {{-- @if(Auth::user()->role < 5) <div class="buttons"> --}}

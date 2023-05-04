@@ -14,10 +14,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-8">
-
-
                                     <div class="mb-3">
-                                        <label class="form-label">Story Tile</label>
+                                        <label class="form-label">Story Title</label>
                                         <input type="text" class="form-control" name="title" value={{old('title', $product->title)}}>
                                         <div class="form-text">Please add story title here</div>
                                     </div>
@@ -27,6 +25,13 @@
                                         <label class="form-label">Story Donated Amount</label>
                                         <input type="text" class="form-control" name="price" value={{old('price', $product->price)}}>
                                         <div class="form-text">Please add story donation amount here</div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="mb-3">
+                                        <label class="form-label">Story Text</label>
+                                        <input type="text" class="form-control" name="text" value={{old('text')}}>
+                                        <div class="form-text">Please add story text here</div>
                                     </div>
                                 </div>
 

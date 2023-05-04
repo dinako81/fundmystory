@@ -21,13 +21,23 @@ class StoryController extends Controller
     
     public function create()
     {
-        //
+        $stories = Story::all();
+        
+        return view('back.stories.create', [
+            'stories' => $stories
+        ]);
     }
 
     
-    public function store(StoreStoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $id = Story::create([
+            'title' => $request->title,
+            'text' => $request->text,
+            'totalfund' => $request->totalfund
+        ])->id;
+
+        return redirect()->route('stories-create');
     }
 
     
@@ -43,7 +53,7 @@ class StoryController extends Controller
     }
 
     
-    public function update(UpdateStoryRequest $request, Story $story)
+    public function update(Request $request, Story $story)
     {
         //
     }
