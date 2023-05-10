@@ -38,7 +38,7 @@ class StoryController extends Controller
             'totalfund' => $request->totalfund
         ])->id;
 
-        return redirect()->route('stories-create');
+        return redirect()->route('stories-index');
     }
 
     

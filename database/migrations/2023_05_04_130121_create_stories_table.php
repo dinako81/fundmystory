@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100);
-            $table->string('text', 1000);
+            $table->string('text', 2000);
             // $table->unsignedBigInteger('user_id');
             // $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedTinyInteger('status')->default(1);
