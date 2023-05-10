@@ -6,3 +6,35 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+
+body {
+    background-image: url('../../back/images/fundme.png');
+  }
+
+.stories-list {
+    .story {
+        .story-amount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            h2{
+                text-transform: uppercase;
+                font-weight: bolder;
+                
+            }
+            span {
+                color: orangered;
+                font-size: 22px;
+                padding-left: 20px;
+            }
+            .buttons {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            }
+        }
+        
+    }
+}

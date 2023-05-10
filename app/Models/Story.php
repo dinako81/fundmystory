@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Story extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'text', 'user_id', 'status', 'totalfund'];
+    protected $fillable = ['title', 'text', 'status', 'totalfund'];
     public $timestamps = false;
 
     const STATUS = [

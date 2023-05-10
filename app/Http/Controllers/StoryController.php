@@ -32,6 +32,7 @@ class StoryController extends Controller
     public function store(Request $request)
     {
         $id = Story::create([
+        
             'title' => $request->title,
             'text' => $request->text,
             'totalfund' => $request->totalfund
@@ -49,18 +50,26 @@ class StoryController extends Controller
     
     public function edit(Story $story)
     {
-        //
+        return view('back.stories.edit', [
+            'story' => $story
+        ]);
     }
 
     
     public function update(Request $request, Story $story)
     {
-        //
+        $story->update([
+            'title' => $request->title,
+            'text' => $request->text,
+        ]);
+
+        return redirect()->route('stories-index');
     }
 
     
     public function destroy(Story $story)
     {
-        //
+        $story->delete();
+        return redirect()->route('stories-index');
     }
 }
