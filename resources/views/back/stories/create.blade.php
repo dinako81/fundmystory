@@ -51,7 +51,7 @@
 
                                 <button type="button" class="btn btn-secondary --add--gallery">add gallery photo</button>
 
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
 
                                 <div class="col-12">
                                     <button type="submit" class="mt-5 btn btn-outline-primary">Submit</button>

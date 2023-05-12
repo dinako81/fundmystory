@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\StoryController as S;
 use App\Http\Controllers\FrontController as F;
 
