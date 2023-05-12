@@ -30,7 +30,7 @@
                                 <div class="col-3">
                                     <div class="mb-3">
                                         <label class="form-label">Story Donated Amount</label>
-                                        <input type="number" class="form-control" name="totalfund" value={{old('totalfund')}}>
+                                        <input type="number" class="form-control" name="totalamount" value={{old('totalfund')}}>
                                         <div class="form-text">Please add story donation amount here</div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
 
                                 <button type="button" class="btn btn-secondary --add--gallery">add gallery photo</button>
 
-                                {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
+                                <button type="submit" class="btn btn-primary">Submit</button>
 
                                 <div class="col-12">
                                     <button type="submit" class="mt-5 btn btn-outline-primary">Submit</button>

@@ -9,7 +9,7 @@ use Illuminate\Http\UploadedFile;
 class Photo extends Model
 {
     use HasFactory;
-    protected $fillable = ['photo', 'cat_id'];
+    protected $fillable = ['photo', 'story_id'];
     public $timestamps = false;
 
 }

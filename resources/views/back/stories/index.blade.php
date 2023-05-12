@@ -22,9 +22,9 @@
 
                                     <div class="photo">
                                         @if($story->photo)
-                                        <img src="{{asset('stores-photo') .'/t_'. $story->photo}}">
+                                        <img src="{{asset('photo') .'/t_'. $story->photo}}">
                                         @else
-                                        <img src="{{asset('stories-photo') .'/no.png'}}">
+                                        <img src="{{asset('photo') .'/no.jpg'}}">
                                         @endif
                                     </div>
 
@@ -53,15 +53,11 @@
                                                 @method('put')
                                             </form>
                                         </div>
-
-
-
                                 </div>
                                 @if(Auth::user()->role < 5) <div class="donors">
                                     <div>
                                         <h1>Donors List:</h1>
                                     </div>
-
 
                                     @endif
                             </div>

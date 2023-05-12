@@ -90,7 +90,7 @@ class storyController extends Controller
         // validacija donated <= rest
 
         if(!$request->type) {
-            $story->totalamount = $story->totalamount - $request->donatedamount;
+            $story->totalamount = $story->totalamount;
             $story->donatedamount = $story->donatedamount + $request->donatedamount;
             $story->restamount = $story->totalamount - $story->donatedamount;
             $story->save();
