@@ -9,7 +9,7 @@
                     <h1>Add Stories</h1>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('stories-store')}}" method="post">
+                    <form action="{{route('stories-store')}}" method="post" enctype="multipart/form-data">
 
                         <div class="container">
                             <div class="row">
@@ -30,7 +30,7 @@
                                 <div class="col-3">
                                     <div class="mb-3">
                                         <label class="form-label">Story Donated Amount</label>
-                                        <input type="number" class="form-control" name="totalamount" value={{old('totalfund')}}>
+                                        <input type="number" class="form-control" name="totalamount" value={{old('totalamount')}}>
                                         <div class="form-text">Please add story donation amount here</div>
                                     </div>
                                 </div>

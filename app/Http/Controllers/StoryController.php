@@ -40,7 +40,7 @@ class storyController extends Controller
         
             'title' => $request->title,
             'text' => $request->text,
-            'totalamount' => $request->totalfund,
+            'totalamount' => $request->totalamount,
             'donatedamount' => $request->donatedamount,
             'restamount' => $request->restamount
         ])->id;
