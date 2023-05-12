@@ -14,27 +14,37 @@ body {
 
 .stories-list {
     .story {
-        .story-amount {
-            display: flex;
+        .story-info  {
+           
             justify-content: space-between;
-            align-items: center;
-            padding: 10px;
+            align-items: left;
+            padding: 20px;
             h2{
                 text-transform: uppercase;
                 font-weight: bolder;
-                
             }
-            span {
+        }
+       .story-amount  {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 10px;
+       
+            span{
+                display: inline;
                 color: orangered;
                 font-size: 22px;
                 padding-left: 20px;
             }
             .buttons {
-                display: flex;
-                justify-content: flex-end;
-                gap: 10px;
-            }
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
         }
-        
     }
 }
+}
+       
+    
+        
+    

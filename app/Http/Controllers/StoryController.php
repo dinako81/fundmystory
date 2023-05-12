@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Story;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers;
 
-class StoryController extends Controller
+use App\Models\Story;
+use App\Models\Photo;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
+
+class storyController extends Controller
 {
     
     public function index()
@@ -35,7 +40,9 @@ class StoryController extends Controller
         
             'title' => $request->title,
             'text' => $request->text,
-            'totalfund' => $request->totalfund
+            'totalamount' => $request->totalfund,
+            'donatedamount' => $request->donatedamount,
+            'restamount' => $request->restamount
         ])->id;
 
         return redirect()->route('stories-index');
@@ -44,7 +51,9 @@ class StoryController extends Controller
     
     public function show(Story $story)
     {
-        //
+        return view('back.stories.show', [
+            'story' => $story
+        ]);
     }
 
     
@@ -61,15 +70,47 @@ class StoryController extends Controller
         $story->update([
             'title' => $request->title,
             'text' => $request->text,
+            
         ]);
 
         return redirect()->route('stories-index');
     }
 
+    public function editamount(Story $story)
+    {
+        return view('stories.edit', [
+            'totalamount' => $totalamount
+        ]);
+    }
+
+    
+    public function donateamount(Request $request, Story $story)
+    {
+
+        // validacija donated <= rest
+
+        if(!$request->type) {
+            $story->totalamount = $story->totalamount - $request->donatedamount;
+            $story->donatedamount = $story->donatedamount + $request->donatedamount;
+            $story->restamount = $story->totalamount - $story->donatedamount;
+            $story->save();
+        
+            return redirect()
+            ->route('stories-index')
+            ->with('info', 'Funds was added');  
+     
+        }
+    }
     
     public function destroy(Story $story)
     {
         $story->delete();
         return redirect()->route('stories-index');
+    }
+
+    public function destroyPhoto(Photo $photo)
+    {
+        $photo->deletePhoto();
+        return redirect()->back();
     }
 }

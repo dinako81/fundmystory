@@ -31,18 +31,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Stories
+                        <li>
+                            <a class="dropdown-item" href="{{ route('front-index') }}">
+                                Stories list
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('stories-index') }}">
-                                    Stories list
-                                </a>
-                                <a class="dropdown-item" href="{{ route('stories-create') }}">
-                                    New Story
-                                </a>
-                            </div>
+                            <a class="dropdown-item" href="{{ route('stories-create') }}">
+                                New Story
+                            </a>
                         </li>
                     </ul>
 
@@ -62,6 +57,11 @@
                         </li>
                         @endif
                         @else
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front-stories') }}">My stories</a>
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}

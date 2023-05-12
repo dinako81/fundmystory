@@ -11,3 +11,43 @@
 body {
     background-image: url('../../back/images/fundme.png');
   }
+
+.stories-list {
+    .story {
+        .story-info  {
+           
+            justify-content: space-between;
+            align-items: left;
+            padding: 20px;
+            h2{
+                text-transform: uppercase;
+                font-weight: bolder;
+            }
+        }
+       .story-amount  {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 10px;
+       
+            span{
+                display: inline;
+                color: orangered;
+                font-size: 22px;
+                padding-left: 20px;
+            }
+            .buttons {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+            
+            }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+    }
+        
+    }

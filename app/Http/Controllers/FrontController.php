@@ -15,4 +15,16 @@ class FrontController extends Controller
             'stories' => $stories
         ]);
     }
+
+
+    public function stories(Request $request)
+    {
+        $stories = $request->user()->story;
+
+        return view('front.stories', [
+            'stories' => $stories,
+            'status' => Story::STATUS
+        ]);
+    }
+
 }

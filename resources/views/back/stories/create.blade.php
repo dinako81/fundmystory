@@ -34,6 +34,24 @@
                                         <div class="form-text">Please add story donation amount here</div>
                                     </div>
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Main Cat photo</label>
+                                    <input type="file" class="form-control" name="photo">
+                                </div>
+
+
+                                <div class="mb-3" data-gallery="0">
+                                    <label class="form-label">Gallery photo <span class="rem">X</span></label>
+                                    <input type="file" class="form-control">
+                                </div>
+
+                                <div class="gallery-inputs">
+
+                                </div>
+
+                                <button type="button" class="btn btn-secondary --add--gallery">add gallery photo</button>
+
+                                {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
 
                                 <div class="col-12">
                                     <button type="submit" class="mt-5 btn btn-outline-primary">Submit</button>

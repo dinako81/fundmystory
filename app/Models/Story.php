@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Story extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'text', 'status', 'totalfund'];
+    protected $fillable = ['title', 'text', 'status', 'totalamount', 'donatedamount', 'restamount','photo'];
     public $timestamps = false;
 
     const STATUS = [
@@ -19,5 +19,10 @@ class Story extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function photo()
+    {
+        return $this->hasMany(Photo::class);
     }
 }

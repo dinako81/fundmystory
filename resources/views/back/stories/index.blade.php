@@ -14,38 +14,71 @@
                         <li class="list-group-item">
                             <div class="stories-list">
                                 <div class="story">
-                                    <div class="story-amount">
-                                        <div>
-                                            <h2>{{$story->title}}</h2> {{$story->text}}<span>{{$story->totalfund}} EUR</span>
+                                    <div class="story-info">
+
+                                        <h2>{{$story->title}}</h2>
+                                        {{$story->text}}
+                                    </div>
+
+                                    <div class="photo">
+                                        @if($story->photo)
+                                        <img src="{{asset('stores-photo') .'/t_'. $story->photo}}">
+                                        @else
+                                        <img src="{{asset('stories-photo') .'/no.png'}}">
+                                        @endif
+                                    </div>
+
+                                    @if(Auth::user()->role < 5) <div class="buttons">
+                                        <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
+                                        <form action="{{route('stories-delete', $story)}}" method="post">
+                                            <button type="submit" class="btn btn-outline-danger">Delete Story</button>
+                                            @csrf
+                                            @method('delete')
+                                        </form>
+                                        @endif
+
+                                        <div class="story-amount">
+                                            <div>
+                                                <span> Goal: {{$story->totalamount}} EUR</span>
+                                                <span> Donated: {{$story->donatedamount}} EUR</span>
+                                                <span> Rest: {{$story->restamount}} EUR</span>
+                                            </div>
 
                                         </div>
-                                        {{-- @if(Auth::user()->role < 5)  --}}
                                         <div class="buttons">
-                                            <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit</a>
-                                            <form action="{{route('stories-delete', $story)}}" method="post">
-                                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                            <form action="{{route('stories-donateamount', $story)}}" method="post">
+                                                <input type="text" class="form-control brown" name="donatedamount" value="">
+                                                <button type="submit" class="btn btn-outline-dark brown">Donate</button>
                                                 @csrf
-                                                @method('delete')
+                                                @method('put')
                                             </form>
                                         </div>
-                                        {{-- @endif --}}
-                                    </div>
+
+
+
                                 </div>
+                                @if(Auth::user()->role < 5) <div class="donors">
+                                    <div>
+                                        <h1>Donors List:</h1>
+                                    </div>
+
+
+                                    @endif
                             </div>
-                        </li>
-
-
-
-                        @empty
-                        <li class="list-group-item">
-                            <div class="cat-line">No storys</div>
-                        </li>
-                        @endforelse
-                    </ul>
                 </div>
             </div>
+            </li>
+            @empty
+            <li class="list-group-item">
+                <div class="cat-line">No storys</div>
+            </li>
+            @endforelse
+            </ul>
         </div>
     </div>
 </div>
+</div>
+</div>
+
 
 @endsection
