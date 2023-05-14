@@ -12,7 +12,7 @@ class FrontController extends Controller
         $stories = Story::all();
 
         return view('front.index', [
-            'stories' => $stories
+            'stories' => $stories,
         ]);
     }
 

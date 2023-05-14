@@ -34,26 +34,32 @@ class storyController extends Controller
     }
 
     
-    public function store(Request $request,Story $story )
+   
+    public function store(Request $request, Story $story)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'title' => 'required|min:3|max:100',
-        //     'photo' => 'sometimes|required|image|max:512',
-        //     'gallery.*' => 'sometimes|required|image|max:512'
-        // ]);
+    
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|min:3|max:100',
+            'text' => 'required|min:3|max:1000',
+            'totalamount' => 'required|numeric',
+            // 'donatedamount' => 'required|numeric',
+            // 'restamount' => 'required|numeric',
+            'photo' => 'sometimes|required|image|max:512',
+            'gallery.*' => 'sometimes|required|image|max:512'
+        ]);
 
-        // if ($validator->fails()) {
-        //     $request->flash();
-        //     return redirect()
-        //         ->back()
-        //         ->withErrors($validator);
-        // }  $photo = $request->photo;
-        // if ($photo) {
-        //     $name = $story->savePhoto($photo);
-        // }
-
-        $id = Story::create([
+        if ($validator->fails()) {
+            $request->flash();
+            return redirect()
+                ->back()
+                ->withErrors($validator);
+        }
         
+        $photo = $request->photo;
+        if ($photo) {
+            $name = $story->savePhoto($photo);
+        }
+        $id = Story::create([
             'title' => $request->title,
             'text' => $request->text,
             'totalamount' => $request->totalamount,
@@ -61,10 +67,11 @@ class storyController extends Controller
             'restamount' => $request->restamount,
             'photo' => $name ?? null
         ])->id;
-        
+
         foreach ($request->gallery ?? [] as $gallery) {
             Photo::add($gallery, $id);
         }
+
         return redirect()->route('stories-index');
     }
 

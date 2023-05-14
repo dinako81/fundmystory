@@ -23,21 +23,22 @@ class Story extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function photo()
+    public function product()
     {
-        return $this->hasMany(Photo::class);
+        return $this->hasMany(Product::class);
     }
 
     public function gallery()
     {
         return $this->hasMany(Photo::class, 'story_id', 'id');
     }
+
     public function deletePhoto()
     {
         if ($this->photo) {
-            $photo = public_path() . '/photo/' . $this->photo;
+            $photo = public_path() . '/stories-photo/' . $this->photo;
             unlink($photo);
-            $photo = public_path() . '/photo/t_' . $this->photo;
+            $photo = public_path() . '/stories-photo/t_' . $this->photo;
             unlink($photo);
         }
         $this->update([
@@ -45,15 +46,15 @@ class Story extends Model
         ]);
     }
 
-    // public function savePhoto(UploadedFile $photo) : string
-    // {
-    //     $name = $photo->getClientOriginalName();
-    //     $name = rand(1000000, 9999999) . '-' . $name;
-    //     $path = public_path() . '/photo/';
-    //     $photo->move($path, $name);
-    //     $img = Image::make($path . $name);
-    //     $img->resize(200, 200);
-    //     $img->save($path . 't_' . $name, 90);
-    //     return $name;
-    // }
+    public function savePhoto(UploadedFile $photo) : string
+    {
+        $name = $photo->getClientOriginalName();
+        $name = rand(1000000, 9999999) . '-' . $name;
+        $path = public_path() . '/stories-photo/';
+        $photo->move($path, $name);
+        $img = Image::make($path . $name);
+        $img->resize(200, 200);
+        $img->save($path . 't_' . $name, 90);
+        return $name;
+    }
 }

@@ -5,13 +5,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 
 
-// puslapio krovimo metu
-if (document.querySelector('.--colors--selectors')) {
-    addNameEvents(
-        document.querySelector('.--colors--selectors'),
-        document.querySelector('.--cat--select')
-    );
-}
 
 if (document.querySelector('.--add--gallery')) {
     let g = 0;

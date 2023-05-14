@@ -12,16 +12,23 @@ body {
     background-image: url('../../back/images/fundme.png');
   }
 
-.stories-list {
+  .stories-list {
     .story {
+
         .story-info  {
-           
             justify-content: space-between;
             align-items: left;
             padding: 20px;
             h2{
                 text-transform: uppercase;
                 font-weight: bolder;
+            }
+        }
+        .photo {
+            margin: 0 10px;
+            img {
+                height: 100px;
+                width: auto;
             }
         }
        .story-amount  {
@@ -37,17 +44,31 @@ body {
                 padding-left: 20px;
             }
             .buttons {
-                display: flex;
-                justify-content: flex-end;
-                gap: 10px;
-            
-            }
-        }
-        .buttons {
             display: flex;
             justify-content: space-around;
             gap: 10px;
         }
     }
-        
-    }
+}
+
+
+}
+
+[data-gallery="0"] {
+    display: none;
+}
+
+span.rem {
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid crimson;
+    background-color: crimson;
+    border-radius: 50%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}

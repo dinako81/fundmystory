@@ -22,9 +22,9 @@
 
                                     <div class="photo">
                                         @if($story->photo)
-                                        <img src="{{asset('photo') .'/t_'. $story->photo}}">
+                                        <img src="{{asset('stories-photo') .'/t_'. $story->photo}}">
                                         @else
-                                        <img src="{{asset('photo') .'/no.jpg'}}">
+                                        <img src="{{asset('stories-photo') .'/no.jpg'}}">
                                         @endif
                                     </div>
 
