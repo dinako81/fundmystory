@@ -56,6 +56,7 @@ class storyController extends Controller
         }
         
         $photo = $request->photo;
+        // jeigu yr nuotrauka, ja paseivinam, updaitinam story, ir pridedam galerija
         if ($photo) {
             $name = $story->savePhoto($photo);
         }

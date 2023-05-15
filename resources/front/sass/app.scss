@@ -9,13 +9,22 @@
 
 
 body {
-    background-image: url('../../back/images/fundme.png');
+    background-image: url('../../back/images/fundforest.jpg');
+    background-size:contain;
+    background-repeat:round;
   }
+
+//   .card-body{
+//     background-image: url('../../back/images/fundearth.jpg');
+//     background-size:contain;
+
+//   }
   .story-line {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    font-size: 20px;
     .story-info {
         display: flex;
         justify-content: space-around;

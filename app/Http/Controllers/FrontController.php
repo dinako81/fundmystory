@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -95,5 +96,17 @@ class FrontController extends Controller
             return redirect()->back();
         }
         
+    }
+
+    public function gallery(Photo $photo, Story $story)
+    {
+        
+        // $photos = $story->photo;
+
+        // return view('front.gallery', [
+        //     'story' => $story,
+        //     'photos' => $photos,
+        //     'photo' => $photo,
+        // ]);
     }
 }

@@ -12,7 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     @vite(['resources/front/sass/app.scss', 'resources/front/js/app.js'])
@@ -30,15 +30,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li>
-                            <a class="dropdown-item" href="{{ route('front-index') }}">
-                                Stories list
-                            </a>
-                            <a class="dropdown-item" href="{{ route('stories-create') }}">
-                                New Story
-                            </a>
-                        </li>
+
+                    <ul class="nav-item mt-4" style="font-size: 30px">
+                        <a class="nav-link " href="{{ route('front-index') }}">
+                            Stories list
+                        </a>
+                    </ul>
+
+                    <ul class="nav-item mt-4" style="font-size: 30px">
+                        <a class="nav-link " href="{{ route('stories-create') }}">
+                            New Story
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

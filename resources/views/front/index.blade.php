@@ -6,9 +6,9 @@
         <div class="col-3">
             @include('front.stories')
         </div>
-        <div class="col-12">
-            <div class="card mt-5">
-                <div class="card-header">
+        <div class="col-9">
+            <div class=" card mt-5">
+                <div class="col-9 card-header">
                     <h1>Stories List</h1>
                 </div>
                 <div class="card-body">
@@ -35,8 +35,11 @@
                                         <input type="file" class="form-control">
                                     </div>
 
+                                    <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
+
+
                                     {{-- @if(Auth::user()->role < 5)  --}}
-                                    <div class="buttons">
+                                    <div class="buttons mx-auto">
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                                         <form action="{{route('stories-delete', $story)}}" method="post">
                                             <button type="submit" class="btn btn-outline-danger">Delete Story</button>
