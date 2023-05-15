@@ -111,10 +111,11 @@ class storyController extends Controller
             $story->deletePhoto();
             $story->update([
                 'title' => $request->title,
+                'text' => $request->text,
                 'photo' => $name
             ]);
         } else {
-
+// jeigu nera foto, updatinam tik kita info
         $story->update([
             'title' => $request->title,
             'text' => $request->text,

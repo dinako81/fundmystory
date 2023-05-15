@@ -28,9 +28,9 @@ class Story extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function product()
+    public function photo()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Photo::class);
     }
 
     public function gallery()
@@ -52,6 +52,7 @@ class Story extends Model
     }
 
     public function savePhoto(UploadedFile $photo) : string
+    // uploaded file butinai, kitaip nezinos koks metodas
     {
         $name = $photo->getClientOriginalName();
         $name = rand(1000000, 9999999) . '-' . $name;
