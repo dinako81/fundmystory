@@ -17,9 +17,10 @@ use App\Http\Controllers\FrontController as F;
 
 Route::name('front-')->group(function () {
     Route::get('/', [F::class, 'index'])->name('index');
-    // Route::get('/story/{story}', [F::class, 'catColors'])->name('stories');
-    // Route::get('/product/{product}', [F::class, 'showProduct'])->name('show-product');
+    Route::get('/story/{story}', [F::class, 'showStory'])->name('show-story');
     Route::get('/my-stories', [F::class, 'stories'])->name('stories')->middleware('role:admin|client');
+    Route::put('/vote/{story}', [F::class, 'vote'])->name('vote')->middleware('role:admin|client');
+    Route::put('/donors/{story}', [F::class, 'donors'])->name('donors')->middleware('role:admin|client');
     Route::get('/download/{story}', [F::class, 'download'])->name('download')->middleware('role:admin|client');
 });
 

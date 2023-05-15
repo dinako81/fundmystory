@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\StoryService;
+use App\Services\StoriesService;
 use Illuminate\Contracts\Foundation\Application;
 
 class StoriesServiceProvider extends ServiceProvider
@@ -13,8 +13,8 @@ class StoriesServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(StoryService::class, function (Application $app) {
-            return new StoryService();
+        $this->app->singleton(StoriesService::class, function (Application $app) {
+            return new StoriesService();
         });
     }
 

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\Story;
 
 
-class StoryService
+class StoriesService
 {
     public function get()
     {

@@ -10,10 +10,15 @@ use Illuminate\Http\UploadedFile;
 class Story extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'text', 'status', 'totalamount', 'donatedamount', 'restamount','photo'];
+    protected $fillable = ['title', 'text', 'status', 'totalamount', 'donatedamount', 'restamount','photo', 'rate', 'rates', 'donations', 'donors'];
     public $timestamps = false;
+    
+    protected $casts = [
+        'donations', 'rates' => 'array'
+        
+    ];
 
-    const STATUS = [
+       const STATUS = [
         1 => 'Proccesing',
         2 => 'Confirmed'
     ];

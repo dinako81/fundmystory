@@ -15,7 +15,6 @@
                             <div class="stories-list">
                                 <div class="story">
                                     <div class="story-info">
-
                                         <h2>{{$story->title}}</h2>
                                         {{$story->text}}
                                     </div>

@@ -26,5 +26,13 @@ class DatabaseSeeder extends Seeder
             // bebras-klientas
             'password' => Hash::make('123'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Koshkis',
+            'email' => 'koshkis@gmail.com',
+            'role' => 10,
+            // bebras-klientas
+            'password' => Hash::make('123'),
+        ]);
     }
 }

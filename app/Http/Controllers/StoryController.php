@@ -77,9 +77,14 @@ class storyController extends Controller
 
     
     public function show(Story $story)
+
     {
+        $stories = Story::all();
+        
         return view('back.stories.show', [
-            'story' => $story
+            'story' => $story,
+            'stories' => $stories,
+
         ]);
     }
 

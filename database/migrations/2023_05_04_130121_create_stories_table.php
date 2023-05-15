@@ -16,12 +16,16 @@ return new class extends Migration
             $table->string('title', 100);
             $table->string('text', 2000);
             $table->unsignedTinyInteger('status')->default(1);
-            $table->decimal('totalamount', 6, 2)->unsigned();
-            $table->decimal('donatedamount', 6, 2)->unsigned()->nullable();
-            $table->decimal('restamount', 6, 2)->unsigned()->nullable();
+            $table->decimal('totalamount', 10, 2)->unsigned();
+            $table->decimal('donatedamount', 10, 2)->unsigned()->nullable();
+            $table->decimal('restamount', 10, 2)->unsigned()->nullable();
             $table->string('photo', 200)->nullable()->default(null);
             // $table->unsignedBigInteger('user_id');
             // $table->foreign('user_id')->references('id')->on('users');
+            $table->decimal('rate', 3, 2)->unsigned()->nullable()->default(null);
+            $table->json('rates')->default('[]');
+            $table->decimal('donations', 10, 2)->unsigned()->nullable();
+            $table->json('donors')->default('[]');
 
         });
     }

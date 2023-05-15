@@ -2,13 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-
+    <div class="row">
         <div class="col-3">
             @include('front.stories')
         </div>
-
-        <div class="col-10">
+        <div class="col-12">
             <div class="card mt-5">
                 <div class="card-header">
                     <h1>Stories List</h1>
@@ -20,7 +18,6 @@
                             <div class="stories-list">
                                 <div class="story">
                                     <div class="story-info">
-
                                         <h2>{{$story->title}}</h2>
                                         {{$story->text}}
                                     </div>
@@ -33,6 +30,11 @@
                                         @endif
                                     </div>
 
+                                    <div class="mb-3" data-gallery="0">
+                                        <label class="form-label">Gallery photo <span class="rem">X</span></label>
+                                        <input type="file" class="form-control">
+                                    </div>
+
                                     {{-- @if(Auth::user()->role < 5)  --}}
                                     <div class="buttons">
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
@@ -42,6 +44,8 @@
                                             @method('delete')
                                         </form>
                                         {{-- @endif --}}
+
+                                        @include('front.stars')
 
                                         <div class="story-amount">
                                             <div>
@@ -61,13 +65,11 @@
                                         </div>
                                     </div>
                                     {{-- @if(Auth::user()->role < 5)  --}}
-                                    <div class="donors">
-                                        <div>
-                                            <h1>Donors List:</h1>
-                                        </div>
-                                        {{--
+
+                                    @include('front.donors')
+                                    {{--
                                         @endif --}}
-                                    </div>
+
                                 </div>
                             </div>
                         </li>
