@@ -11,6 +11,31 @@
 body {
     background-image: url('../../back/images/fundme.png');
   }
+  .story-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    .story-info {
+        display: flex;
+        justify-content: space-around;
+        .photo {
+            margin: 0 10px;
+            img {
+                height: 100px;
+                width: auto;
+            }
+        }
+        
+    }
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+}
+
+
 
   .stories-list {
     .story {

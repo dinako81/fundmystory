@@ -3,6 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+
+        <div class="col-3">
+            @include('front.stories')
+        </div>
+
         <div class="col-10">
             <div class="card mt-5">
                 <div class="card-header">
@@ -28,14 +33,15 @@
                                         @endif
                                     </div>
 
-                                    @if(Auth::user()->role < 5) <div class="buttons">
+                                    {{-- @if(Auth::user()->role < 5)  --}}
+                                    <div class="buttons">
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                                         <form action="{{route('stories-delete', $story)}}" method="post">
                                             <button type="submit" class="btn btn-outline-danger">Delete Story</button>
                                             @csrf
                                             @method('delete')
                                         </form>
-                                        @endif
+                                        {{-- @endif --}}
 
                                         <div class="story-amount">
                                             <div>
@@ -53,27 +59,28 @@
                                                 @method('put')
                                             </form>
                                         </div>
-                                </div>
-                                @if(Auth::user()->role < 5) <div class="donors">
-                                    <div>
-                                        <h1>Donors List:</h1>
                                     </div>
-
-                                    @endif
+                                    {{-- @if(Auth::user()->role < 5)  --}}
+                                    <div class="donors">
+                                        <div>
+                                            <h1>Donors List:</h1>
+                                        </div>
+                                        {{--
+                                        @endif --}}
+                                    </div>
+                                </div>
                             </div>
+                        </li>
+                        @empty
+                        <li class="list-group-item">
+                            <div class="cat-line">No storys</div>
+                        </li>
+                        @endforelse
+                    </ul>
                 </div>
             </div>
-            </li>
-            @empty
-            <li class="list-group-item">
-                <div class="cat-line">No storys</div>
-            </li>
-            @endforelse
-            </ul>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 
