@@ -11,6 +11,21 @@ class FrontController extends Controller
     public function index(Request $request)
     {
         $stories = Story::all();
+        $id = $request->id ?? 0;
+        $sort = $request->sort ?? '';
+        
+        $stories = match($sort) {
+            'stories' => $stories,
+            'rates0-50' => $clients->where('rates', '>', 0 && 'rates', '<', 50),
+            'rates51-100' => $clients->where('rates', '>', 50 && 'rates', '<', 100),
+            'rates101-150' => $clients->where('rates', '>', 100 && 'rates', '<', 150),
+           
+            default => $stories
+        };
+
+        $request->session()->put('last-client-view', [
+            'sort' => $sort,
+        ]);
 
         $stories->map(function($p) use ($request) {
 
@@ -32,7 +47,9 @@ class FrontController extends Controller
 
         });
         return view('front.index', [
-            'stories' => $stories
+            'stories' => $stories,
+            'sortSelect' => Story::SORT,
+            'sort' => $sort
         ]);
     }
 

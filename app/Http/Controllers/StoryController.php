@@ -19,7 +19,7 @@ class storyController extends Controller
 
         return view('back.stories.index', [
             'stories' => $stories,
-            'status' => Story::STATUS
+            'status' => Story::STATUS,            
         ]);
     }
 

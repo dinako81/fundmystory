@@ -11,13 +11,16 @@
                 <div class="card-header">
                     <h1>Stories List</h1>
                 </div>
-
                 <div class="card-body">
 
                     <ul class="list-group">
 
+
+
                         @forelse($stories as $story)
                         <li class="list-group-item">
+
+
 
                             <div class="story">
                                 <div class="story-info">
