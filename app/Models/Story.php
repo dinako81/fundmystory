@@ -20,9 +20,9 @@ class Story extends Model
 
     const SORT = [
         'default' => 'Be rūšiavimo',
-        'rates0-50' => 'Hearts 1-50',
-        'rates51-100' => 'Hearts 50-100',
-        'rates101-150' => 'Hearts 100-150',
+        'rates 0' => 'Hearts 0-0',
+        'rates 1-3' => 'Hearts 1-3',
+        'rates 4-50' => 'Hearts 4-50',
     ];
 
        const STATUS = [

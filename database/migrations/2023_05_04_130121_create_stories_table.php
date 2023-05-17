@@ -20,13 +20,12 @@ return new class extends Migration
             $table->decimal('donatedamount', 10, 2)->unsigned()->nullable();
             $table->decimal('restamount', 10, 2)->unsigned()->nullable();
             $table->string('photo', 200)->nullable()->default(null);
-            // $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users');
             $table->decimal('rate', 3, 2)->unsigned()->nullable()->default(null);
             $table->json('rates')->default('[]');
-            $table->decimal('donations', 10, 2)->unsigned()->nullable();
-            $table->json('donors')->default('[]');
-
+            // $table->decimal('donations', 10, 2)->unsigned()->nullable();
+            // $table->json('donors')->default('[]');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

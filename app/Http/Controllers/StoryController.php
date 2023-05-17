@@ -89,7 +89,15 @@ class storyController extends Controller
         ]);
     }
 
-    
+    // public function showStory(Story $story)
+    // {
+        
+    //     return view('stories.show', [
+    //         'story' => $story,
+            
+    //     ]);
+    // }
+
     public function edit(Story $story)
     {
         return view('back.stories.edit', [

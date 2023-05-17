@@ -22,13 +22,13 @@ Route::name('front-')->group(function () {
     Route::put('/vote/{story}', [F::class, 'vote'])->name('vote')->middleware('role:admin|client');
     Route::put('/donors/{story}', [F::class, 'donors'])->name('donors')->middleware('role:admin|client');
     Route::get('/download/{story}', [F::class, 'download'])->name('download')->middleware('role:admin|client');
-  Route::get('/gallery', [F::class, 'gallery'])->name('gallery')->middleware('role:admin|client');
+  Route::get('/gallery/{story}', [F::class, 'gallery'])->name('gallery')->middleware('role:admin|client');
 
 });
 
 Route::prefix('stories')->name('stories-')->group(function () {
 
-    Route::get('/', [S::class, 'index'])->name('index')->middleware('role:admin|client');
+    Route::get('/', [S::class, 'index'])->name('index');
     Route::get('/create', [S::class, 'create'])->name('create')->middleware('role:admin|client');
     Route::post('/create', [S::class, 'store'])->name('store')->middleware('role:admin|client');
     Route::get('/{story}', [S::class, 'show'])->name('show')->middleware('role:admin|client');

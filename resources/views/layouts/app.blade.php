@@ -30,20 +30,16 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Stories
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('stories-index') }}">
-                                    Stories list
-                                </a>
-                                <a class="dropdown-item" href="{{ route('stories-create') }}">
-                                    New Story
-                                </a>
-                            </div>
-                        </li>
+                    <ul class="nav-item mt-4" style="font-size: 30px">
+                        <a class="nav-link " href="{{ route('front-index') }}">
+                            Stories list
+                        </a>
+                    </ul>
+
+                    <ul class="nav-item mt-4" style="font-size: 30px">
+                        <a class="nav-link " href="{{ route('stories-create') }}">
+                            New Story
+                        </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

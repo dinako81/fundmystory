@@ -4,8 +4,29 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            @include('front.stories')
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h2>Stories:</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <div class="story-line">
+                            <a href="{{route('front-index')}}">All stories</a>
+                        </div>
+                        @forelse($stories as $story)
+                        <a href="{{route('stories-show', $story)}}">
+                            <h2>{{$story->title}}</h2>
+                        </a>
+                        @empty
+                        <li class="list-group-item">
+                            <div class="story-line">No stories</div>
+                        </li>
+                        @endforelse
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <div class="col-9">
             <div class=" card mt-5">
                 <div class="col-9 card-header">
