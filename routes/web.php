@@ -34,11 +34,10 @@ Route::prefix('stories')->name('stories-')->group(function () {
     Route::get('/{story}', [S::class, 'show'])->name('show')->middleware('role:admin|client');
     Route::get('/edit/{story}', [S::class, 'edit'])->name('edit')->middleware('role:admin|client');
     Route::put('/edit/{story}', [S::class, 'update'])->name('update')->middleware('role:admin|client');
-  
     Route::delete('/delete/{story}', [S::class, 'destroy'])->name('delete')->middleware('role:admin|client');
     Route::get('/funds/{story}', [S::class, 'editamount'])->name('editamoun')->middleware('role:admin|client');
     Route::put('/funds/{story}', [S::class, 'donateamount'])->name('donateamount')->middleware('role:admin|client');
-    Route::delete('/delete-photo/{photo}', [S::class, 'destroyPhoto'])->name('delete-photo')->middleware('role:admin');
+    Route::delete('/delete-photo/{photo}', [S::class, 'destroyPhoto'])->name('delete-photo')->middleware('role:admin|client');
     // Route::get('/my-stories', [S::class, 'stories'])->name('stories')->middleware('role:admin|client');
 
 });

@@ -36,7 +36,6 @@
                 <form action="{{route('stories-index')}}" method="get">
                     <div class="container">
                         <div class="row">
-
                             <div class="col-3">
                                 <div class="mb-3">
                                     <label class="form-label">Rūšiuoti</label>
@@ -50,17 +49,16 @@
                             </div>
 
                             {{-- <div class="col-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Filtras</label>
-                                        <select class="form-select" name="filter">
-                                            @foreach($filterSelect as $value => $text)
-                                            <option value="{{$value}}" @if($value===$filter) selected @endif>{{$text}}</option>
+                                <div class="mb-3">
+                                    <label class="form-label">Filtras</label>
+                                    <select class="form-select" name="filter">
+                                        @foreach($filterSelect as $value => $text)
+                                        <option value="{{$value}}" @if($value===$filter) selected @endif>{{$text}}</option>
                             @endforeach
                             </select>
-                            <div class="form-text">Pasirinkite filtravimo nuostatas</div>
                         </div>
+                        <div class="form-text">Pasirinkite filtravimo nuostatas</div>
                     </div> --}}
-
 
                     <div class="col-3">
                         <div class="sort-filter-buttons">
@@ -68,22 +66,25 @@
                             <a href="{{route('stories-index')}}" class="btn btn-outline-dark butn2 text-danger">Ištrinti</a>
                         </div>
                     </div>
-
+                </form>
             </div>
         </div>
-        </form>
-    </div>
 
+    </div>
 
     <div class="card-body">
         <ul class="list-group">
+
             @forelse($stories as $story)
+
             <li class="list-group-item">
 
                 <div class="stories-list">
 
                     <div class="story">
+
                         <div class="story-info">
+
                             <h2>{{$story->title}}</h2>
                             {{$story->text}}
                         </div>
@@ -101,43 +102,41 @@
                             <input type="file" class="form-control">
                         </div>
 
-                        <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
-
-
-                        {{-- @if(Auth::user()->role < 5)  --}}
                         <div class="buttons mx-auto">
+                            <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
                             <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                             <form action="{{route('stories-delete', $story)}}" method="post">
                                 <button type="submit" class="btn btn-outline-danger">Delete Story</button>
                                 @csrf
                                 @method('delete')
                             </form>
-                            {{-- @endif --}}
 
-                            @include('front.stars')
+                        </div>
 
-                            <div class="story-amount">
-                                <div>
-                                    <span> Goal: {{$story->totalamount}} EUR</span>
-                                    <span> Donated: {{$story->donatedamount}} EUR</span>
-                                    <span> Rest: {{$story->restamount}} EUR</span>
-                                </div>
-
-                            </div>
-                            <div class="buttons">
-                                <form action="{{route('stories-donateamount', $story)}}" method="post">
-                                    <input type="text" class="form-control brown" name="donatedamount" value="">
-                                    <button type="submit" class="btn btn-outline-dark brown">Donate</button>
-                                    @csrf
-                                    @method('put')
-                                </form>
+                        <div class="story-amount">
+                            <div>
+                                <span> Goal: {{$story->totalamount}} EUR</span>
+                                <span> Donated: {{$story->donatedamount}} EUR</span>
+                                <span> Rest: {{$story->restamount}} EUR</span>
                             </div>
                         </div>
-                        {{-- @if(Auth::user()->role < 5)  --}}
 
-                        @include('front.donors')
-                        {{--
-                                        @endif --}}
+                        <div class="buttons">
+                            <form action="{{route('stories-donateamount', $story)}}" method="post">
+                                <input type="text" class="form-control brown" name="donatedamount" value="">
+                                <button type="submit" class="btn btn-outline-dark brown">Donate</button>
+                                @csrf
+                                @method('put')
+                            </form>
+                        </div>
+
+                        <div>
+                            @include('front.stars')
+                        </div>
+
+                        <div>
+                            @include('front.donors')
+                        </div>
 
                     </div>
                 </div>
@@ -149,9 +148,6 @@
             @endforelse
         </ul>
     </div>
-</div>
-</div>
-</div>
 </div>
 
 

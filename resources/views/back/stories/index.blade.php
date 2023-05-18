@@ -53,17 +53,17 @@
                                         <img src="{{asset('stories-photo') .'/no.jpg'}}">
                                         @endif
                                     </div>
-
                                     <div class="mb-3" data-gallery="0">
                                         <label class="form-label">Gallery photo <span class="rem">X</span></label>
                                         <input type="file" class="form-control">
                                     </div>
 
-                                    <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
+
 
 
                                     {{-- @if(Auth::user()->role < 5)  --}}
                                     <div class="buttons mx-auto">
+                                        <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                                         <form action="{{route('stories-delete', $story)}}" method="post">
                                             <button type="submit" class="btn btn-outline-danger">Delete Story</button>
@@ -72,7 +72,6 @@
                                         </form>
                                         {{-- @endif --}}
 
-                                        @include('front.stars')
 
                                         <div class="story-amount">
                                             <div>
@@ -90,6 +89,10 @@
                                                 @method('put')
                                             </form>
                                         </div>
+
+
+
+                                        @include('front.stars')
                                     </div>
                                     {{-- @if(Auth::user()->role < 5)  --}}
 

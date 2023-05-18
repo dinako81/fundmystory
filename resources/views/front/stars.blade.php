@@ -4,7 +4,6 @@
             <label class="star{{ ceil($story->rate) == $i && $story->rate != $i ? ' half' : ''}}" for="_{{$i.'-'.$story->id}}"></label>
             @endfor
             <div class="result">
-                {{-- jeigu istorija tur ivertinma, atvaizduojam --}}
                 @if($story->rate)
                 {{$story->rate}} <span>({{$story->votes}} votes)</span>
                 @else($condition)
@@ -12,7 +11,6 @@
                 @endif
             </div>
             @if($story->showVoteButton)
-            {{-- jeigu prisijnges ir nebalsuota, rodyti mygtuka balsuoti --}}
             <button type="submit" class="btn btn-info">vote</button>
             @endif
             @csrf
