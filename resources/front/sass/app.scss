@@ -100,6 +100,40 @@ span.rem {
     height: 30px;
 }
 
+.front-stories {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .front-story {
+        width: 50%;
+        .front-story-number {
+            font-size: 26px;
+            color: crimson;
+            font-weight: bold;
+        }
+    }
+    .front-story-products {
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+        .front-story-products-list {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            span {
+                font-size: 20px;
+                color: skyblue;
+                padding: 0 10px;
+            }
+            i {
+                padding: 0 10px;
+                font-style: normal;
+            }
+        }
+    }
+}
+
 
 .stars {
     padding: 20px 0 0 0;

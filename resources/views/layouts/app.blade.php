@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
+
     <!-- Scripts -->
     @vite(['resources/back/sass/app.scss', 'resources/back/js/app.js'])
 </head>
@@ -30,17 +31,26 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+
                     <ul class="nav-item mt-4" style="font-size: 30px">
-                        <a class="nav-link " href="{{ route('front-index') }}">
+                        <a class="nav-link " href="{{ route('stories-index') }}">
                             Stories list
                         </a>
                     </ul>
 
                     <ul class="nav-item mt-4" style="font-size: 30px">
-                        <a class="nav-link " href="{{ route('stories-create') }}">
-                            New Story
+                        <a class="nav-link " href="{{ route('orders-index') }}">
+                            To Confirm
                         </a>
                     </ul>
+
+
+                    <ul class="nav-item mt-4" style="font-size: 30px">
+                        <a class="nav-link " href="{{ route('tags-index') }}">
+                            Tags
+                        </a>
+                    </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

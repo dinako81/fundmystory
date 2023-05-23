@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
+use App\Models\Order;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 
@@ -67,16 +68,16 @@ class FrontController extends Controller
     
 
 
-    public function stories(Request $request)
-    {
+    // public function stories(Request $request)
+    // {
              
-        $stories = $request->user();
+    //     $stories = $request->user();
 
-        return view('front.stories', [
-            'stories' => $stories,
-            'status' => Story::STATUS
-        ]);
-    }
+    //     return view('front.stories', [
+    //         'stories' => $stories,
+    //         'status' => Story::STATUS
+    //     ]);
+    // }
 
     public function storyTitle(Story $story)
     {
@@ -88,6 +89,16 @@ class FrontController extends Controller
         ]);
     }
 
+    
+    public function orders(Request $request)
+    {
+        $orders = $request->user()->order;
+
+        return view('front.orders', [
+            'orders' => $orders,
+            'status' => Order::STATUS
+        ]);
+    }
 
     public function vote(Request $request, Story $story)
     {

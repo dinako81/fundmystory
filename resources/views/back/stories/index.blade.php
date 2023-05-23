@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -60,8 +60,6 @@
 
 
 
-
-                                    {{-- @if(Auth::user()->role < 5)  --}}
                                     <div class="buttons mx-auto">
                                         <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
@@ -70,8 +68,6 @@
                                             @csrf
                                             @method('delete')
                                         </form>
-                                        {{-- @endif --}}
-
 
                                         <div class="story-amount">
                                             <div>
@@ -81,24 +77,9 @@
                                             </div>
 
                                         </div>
-                                        <div class="buttons">
-                                            <form action="{{route('stories-donateamount', $story)}}" method="post">
-                                                <input type="text" class="form-control brown" name="donatedamount" value="">
-                                                <button type="submit" class="btn btn-outline-dark brown">Donate</button>
-                                                @csrf
-                                                @method('put')
-                                            </form>
-                                        </div>
 
 
-
-                                        @include('front.stars')
                                     </div>
-                                    {{-- @if(Auth::user()->role < 5)  --}}
-
-                                    @include('front.donors')
-                                    {{--
-                                        @endif --}}
 
                                 </div>
                             </div>

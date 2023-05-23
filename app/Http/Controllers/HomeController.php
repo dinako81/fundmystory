@@ -21,12 +21,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-   
-     public function index(Request $request)
-     {
-         if ($request->user()->role > 5) {
-             return redirect()->route('front-index');
-         }
-         return redirect()->route('stories-index');
-     }
+    public function index(Request $request)
+    {
+        if ($request->user()->role > 5) {
+            return redirect()->route('front-index');
+        }
+        return redirect()->route('stories-index');
+    }
 }

@@ -34,7 +34,6 @@
 
                                 <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
 
-                                {{-- @if(Auth::user()->role < 5)  --}}
                                 <div class="buttons">
                                     <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                                     <form action="{{route('stories-delete', $story)}}" method="post">
@@ -42,7 +41,7 @@
                                         @csrf
                                         @method('delete')
                                     </form>
-                                    {{-- @endif --}}
+
                                 </div>
                                 @include('front.stars')
 

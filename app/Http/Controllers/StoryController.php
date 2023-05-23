@@ -10,16 +10,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class storyController extends Controller
+class StoryController extends Controller
 {
     
     public function index()
     {
         $stories = Story::all();
+        $photos = Photo::all();
 
         return view('back.stories.index', [
             'stories' => $stories,
-            'status' => Story::STATUS,            
+            'photos' => $photos,
+
         ]);
     }
 

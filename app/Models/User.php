@@ -49,7 +49,12 @@ class User extends Authenticatable
 
     public function story()
     {
-        return $this->hasMany(Story::class);
+        return $this->hasOne(Story::class);
     }
 
+    public function order()
+    {
+        return $this->hasOne(Order::class);
+    }
+  
 }

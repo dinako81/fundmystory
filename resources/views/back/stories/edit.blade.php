@@ -23,7 +23,7 @@
                         <div class="mb-3">
                             <label class="form-label">Story Donated Amount</label>
                             <input type="text" class="form-control" name="totalamount" value="{{old('totalamount', $story->totalamount)}}">
-                            <div class="form-text">Please add story title here</div>
+                            <div class="form-text">Please add donated amount here</div>
                         </div>
                         <div class="mb-3">
                             <div class="container">

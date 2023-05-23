@@ -95,6 +95,7 @@
                             @else
                             <img src="{{asset('stories-photo') .'/no.jpg'}}">
                             @endif
+
                         </div>
 
                         <div class="mb-3" data-gallery="0">
@@ -123,6 +124,7 @@
 
                         <div class="buttons">
                             <form action="{{route('stories-donateamount', $story)}}" method="post">
+                                <div class="form-text">Please add donated amount here</div>
                                 <input type="text" class="form-control brown" name="donatedamount" value="">
                                 <button type="submit" class="btn btn-outline-dark brown">Donate</button>
                                 @csrf
