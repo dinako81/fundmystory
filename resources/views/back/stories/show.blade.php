@@ -33,7 +33,7 @@
                                 </div>
 
                                 <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
-
+                                @if(Auth::user())
                                 <div class="buttons">
                                     <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
                                     <form action="{{route('stories-delete', $story)}}" method="post">
@@ -43,6 +43,8 @@
                                     </form>
 
                                 </div>
+                                @endif
+
                                 @include('front.stars')
 
                                 <div class="story-amount">

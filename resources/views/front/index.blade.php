@@ -102,7 +102,7 @@
                             <label class="form-label">Gallery photo <span class="rem">X</span></label>
                             <input type="file" class="form-control">
                         </div>
-
+                        @if(Auth::user())
                         <div class="buttons mx-auto">
                             <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
                             <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
@@ -111,8 +111,8 @@
                                 @csrf
                                 @method('delete')
                             </form>
-
                         </div>
+                        @endif
 
                         <div class="story-amount">
                             <div>

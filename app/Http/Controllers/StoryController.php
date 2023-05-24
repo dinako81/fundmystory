@@ -161,7 +161,7 @@ class StoryController extends Controller
             $story->save();
         
             return redirect()
-            ->route('stories-index')
+            ->route('front-index')
             ->with('info', 'Funds was added');  
      
         }
