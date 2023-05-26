@@ -58,8 +58,6 @@
                                         <input type="file" class="form-control">
                                     </div>
 
-
-
                                     <div class="buttons mx-auto">
                                         <a href="{{route('front-gallery', $story)}}" class="btn btn-outline-success">More gallery photos</a>
                                         <a href="{{route('stories-edit', $story)}}" class="btn btn-outline-success">Edit Story</a>
@@ -75,9 +73,7 @@
                                                 <span> Donated: {{$story->donatedamount}} EUR</span>
                                                 <span> Rest: {{$story->restamount}} EUR</span>
                                             </div>
-
                                         </div>
-
 
                                     </div>
 

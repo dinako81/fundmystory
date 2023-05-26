@@ -13,7 +13,9 @@ class FrontController extends Controller
     {
         $stories = Story::all();
         $id = $request->id ?? 0;
+
         $sort = $request->sort ?? '';
+        
         // $filter = $request->filter ?? '';
 
         // $stories = match($filter) {
@@ -68,16 +70,16 @@ class FrontController extends Controller
     
 
 
-    // public function stories(Request $request)
-    // {
+    public function stories(Request $request)
+    {
              
-    //     $stories = $request->user();
+        $stories = $request->user();
 
-    //     return view('front.stories', [
-    //         'stories' => $stories,
-    //         'status' => Story::STATUS
-    //     ]);
-    // }
+        return view('front.stories', [
+            'stories' => $stories,
+            'status' => Story::STATUS
+        ]);
+    }
 
     public function storyTitle(Story $story)
     {

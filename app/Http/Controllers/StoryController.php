@@ -75,7 +75,9 @@ class StoryController extends Controller
             Photo::add($gallery, $id);
         }
 
-        return redirect()->route('stories-index');
+        return redirect()
+        ->route('stories-index')
+        ->with('ok', 'Story was created'); 
     }
 
     
@@ -138,7 +140,9 @@ class StoryController extends Controller
             Photo::add($gallery, $story->id);
         }
 
-        return redirect()->route('stories-index');
+        return redirect()
+        ->route('stories-index')
+        ->with('info', 'Story was edited');  
     }
 
     public function editamount(Story $story)
@@ -181,13 +185,17 @@ class StoryController extends Controller
         }
         
         $story->delete();
-        return redirect()->route('stories-index');
+        return redirect()
+        ->route('stories-index')
+        ->with('warn', 'Story was deleted');  
     }
 
 
     public function destroyPhoto(Photo $photo)
     {
         $photo->deletePhoto();
-        return redirect()->back();
+        return redirect()
+        ->back()
+        ->with('warn', 'Photo was deleted'); 
     }
 }

@@ -25,11 +25,6 @@ class Story extends Model
         'rates 4-50' => 'Hearts 4-50',
     ];
 
-    //    const STATUS = [
-    //     1 => 'Proccesing',
-    //     2 => 'Confirmed'
-    // ];
-
     public function user()
     {
         return $this->belongsTo(User::class);
